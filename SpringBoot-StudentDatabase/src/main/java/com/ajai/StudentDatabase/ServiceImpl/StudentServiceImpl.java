@@ -34,14 +34,14 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public List<Student> findAllStudents() {
-//		List<Employee> eList = employeeRepository.findAll();
+		List<Student> sList = studentRepository.findAll();
 		
-		Student student = new Student();
-		ExampleMatcher exampleMatcher = ExampleMatcher.matching()
-				.withIgnorePaths("s_name","student_id", "department", "country");
-		Example<Student> example = Example.of(student, exampleMatcher);
+// 		Student student = new Student();
+// 		ExampleMatcher exampleMatcher = ExampleMatcher.matching()
+// 				.withIgnorePaths("s_name","student_id", "department", "country");
+// 		Example<Student> example = Example.of(student, exampleMatcher);
 
-		List<Student> sList = studentRepository.findAll(example);
+// 		List<Student> sList = studentRepository.findAll(example);
 		
 		if (sList.isEmpty()) {
 			throw new RuntimeException("No Students found in Database");
